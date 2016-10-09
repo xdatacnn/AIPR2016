@@ -11,6 +11,8 @@
 \usepackage[all]{xy}
 \usepackage{color}
 \usepackage{subfig}
+\usepackage{clrscode}
+\usepackage{multirow}
 %\usepackage{graphicx,psfrag,epsf}
 \newcommand{\fixd}[1]{\textcolor{red}{\bf #1}} %dani's color
 
@@ -112,7 +114,18 @@ accurately classify scientific data from simulations. Our scheme reduces
 double-format values to one byte,maintaining classification accuracy
 above 98\%.
 
+
+
 \section{Related work}
+Why neuromorphic:
+Problem formulation: the most difficult part of computing, neuromorphic or not, is to figure out what to compute, e.g. scale;
+Increase data volume, complexity (different imaging conditions, noise levels);
+Optimize CNN architecture (number of layer, number of filters, filter size, downsample rate etc.);
+Port to TrueNorth (Dharmendra Modha’s blog);
+Comparing with other algorithms (e.g., SVM, k-means, kNN, bag of features/signatures):
+Complexity and performance;
+Flexibility;
+Robustness in classification and searchable criterias.
 
 
 \section{Simulating and recording scientific data}
@@ -120,6 +133,105 @@ History about synthesis, screening, characterization, discovery and re-discovery
 
 \subsection{Cryo-EM}
 chao/joao
+64 by 64 projection images of TFIID along 9 viewing angles with random perturbation, noise free);
+
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{|c|c|c|}
+ $\Psi\downarrow_i$    & $\Theta\downarrow_i$       & $\phi\downarrow_i$       \\
+0.00 & 0.0000 & 0.0000 \\
+0.00 & 45.000 & 0.0000 \\
+0.00 & 45.000 & 89.975 \\
+0.00 & 45.000 & 179.95 \\
+0.00 & 45.000 & 269.92 \\
+0.00 & 90.000 & 0.0000 \\
+0.00 & 90.000 & 59.983 \\
+0.00 & 90.000 & 119.97 \\
+0.00 & 90.000 & 178.95
+\end{tabular}
+\end{table}
+
+\textbf{Classifying 9 views:}
+Training images generated from a 3D density map of a transcription factor-II
+
+\textbf{Testing}
+100 projection images generated from Euler angles 
+ chosen randomly from 1 to 9 
+,  generated randomly (uniform distribution) with 
+Result: 100\% success rate
+
+
+
+
+
+9 views (evenly spaced on a sphere)
+1000 simulated projection images
+Projection Euler angles:
+
+ chosen randomly from 1 to 9
+,  generated randomly (uniform distribution) with 
+
+\begin{figure*}[!t]
+\centering
+\subfloat[Experimental molecule projections]{\includegraphics[width=.314\linewidth]{img/cryoem3a.png}
+\label{fig_first_case}}
+\hfil
+\subfloat[Detected particle projections]{\includegraphics[width=.33\linewidth]{img/cryoem3b.png}
+\label{fig_second_case}}
+\subfloat[Simulated molecule projections]{\includegraphics[width=.33\linewidth]{img/cryoem3c.png}
+\label{fig_second_case}}
+\caption{LDRD case.}
+\label{fig:ldrd}
+\end{figure*}
+
+\begin{figure*}[!t]
+\centering
+\subfloat[TFIIDM molecule]{\includegraphics[width=.32\linewidth]{img/cryoem1.png}
+\label{fig_first_case}}
+\hfil
+\subfloat[Projections model]{\includegraphics[width=.32\linewidth]{img/cryoem1b.png}
+\label{fig_second_case}}
+\subfloat[Compact model]{\includegraphics[width=.32\linewidth]{img/cryoem1c.png}
+\label{fig_second_case}}
+\caption{LDRD case.}
+\label{fig:ldrd}
+\end{figure*}
+
+
+
+\subsection{X-ray diffraction} %LDRD Bragg peaks
+92\% success rate for good images
+96\% success rate for bad images
+Sufficiently good to distinguish good images from bad images
+%92% success rate on images with Bragg peaks
+%96% success rate on images with few Bragg peaks
+
+\begin{figure}[!t]
+\centering
+\subfloat[Hit]{\includegraphics[width=.33\linewidth]{img/bragg1.png}
+\label{fig_first_case}}
+\hfil
+\subfloat[Miss]{\includegraphics[width=.33\linewidth]{img/bragg2.png}
+\label{fig_second_case}}
+\caption{LDRD case - bragg peaks.}
+\label{fig:ldrd}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\subfloat[False negative]{\includegraphics[width=.33\linewidth]{img/xdiffraction_falsenegative.png}
+\label{fig_first_case}}
+\hfil
+\subfloat[False positive]{\includegraphics[width=.33\linewidth]{img/xdiffraction_falsepositive.png}
+\label{fig_second_case}}
+\caption{LDRD case - bragg peaks.}
+\label{fig:ldrd}
+\end{figure}
+
+
+
 
 \subsection{Scattering}
 We propose a supervised classification approach to identify the crystal lattice types from a Grazing
@@ -144,23 +256,22 @@ that ranged from 82.6\% to 92.29\% depending on the parameters of each test case
 an encouraging result for further extending the use of CNNs for GISAXS as well as other synchrotron
 based scientific experiments.
 
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{llll}
+Method & dataset1 & dataset2 & noisyDataset \\
+CNN    & 92.29    & 82.60    & 91.57        \\
+HOG    & 92.00    & 79.88    & 79.57        \\
+       &          &          &             
+\end{tabular}
+\end{table}
+
 \subsection{Phase contrast}
 
 
-\begin{figure*}[t!]
-\centering
-\subfloat[Case I]{\includegraphics[width=2.5in]{img/fiberMontage.png}
-\label{fig_first_case}}
-\hfil
-\subfloat[Case II]{\includegraphics[width=2.5in]{img/flarom2.png}
-\label{fig_second_case}}
-\caption{Using TensorFlow: Dataset with more than three hundred thousand samples, used to train a deep
-learning algorithm in order to separate fiber profiles (left) from other regions (right) as they
-appear in micro tomography image from ceramic matrix composites. Accuracy results for this CNN are
-99.788623\%, considering stratified training and tests sets, with 70\% and 30\% of the samples
-respectively.}
-\label{fig_sim}
-\end{figure*}
+
 %
 
 \section{Results}
@@ -182,13 +293,28 @@ neuron and synapse can be encoded with only one byte to maintain accuracy above 
 
 
 \subsection{Neuromorphic computing}
+Corelet Laboratory: Corelet Language + Corelet Library (used to configure the neural network)
+COMPASS simulator
+Available for IBM Blue Gene Q;
+Average neuron spiking rate 8.1 Hz (388 times slower than real time);
+Support both MPI and OpenMP and PGAS;
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=\linewidth]{img/joao1.png}
-\caption{Simulation results for the network.}
-\label{fig_sim}
-\end{figure}
+The job of a TrueNorth programmer is to translate a desired computation into a specified network of neurosynaptic cores, its inputs and outputs through corelets
+In this project, we will produce corelets for several image analysis and pattern recognition problems relevant to DOE science applications
+
+Challenges: Can we build a computer that works like a brain?
+Quick classification, pattern recognition
+Low power
+Fault tolerant
+Easy to program
+
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=\linewidth]{img/joao1.png}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
 
 \begin{figure}[h]
 \centering
@@ -240,6 +366,27 @@ respectively.}
 \label{fig:pycbir}
 \end{figure*}
 
+\begin{table}[!h]
+\caption{This is only a place holder for table.}\label{tab:accTari} \centering
+\begin{tabular}{|c||c|c|c|}
+  \hline
+  \multirow{2}{*}{\textbf{Method}} & \textbf{Tari 56} & \textbf{Tari 180} & \textbf{Tari 1000} \\
+   & \textbf{Database} & \textbf{Database} & \textbf{Database} \\
+  \hline
+  Proposed & \textbf{99.84\%} & \textbf{96.66\%} & \textbf{81.60\%} \\
+  \hline
+  ProposedNoConc & 93.82\% & 90.84\% & 73.96\% \\
+  \hline
+  PedrosaA \cite{Pedrosa:2011a} & 43.25\% & 26.40\% & 15.49\% \\
+  \hline
+  PedrosaB \cite{Pedrosa:2011b} & 75.06\% & 61.46\% & 53.35\% \\
+  \hline
+  PedrosaBConc & \textbf{76.48\%} & \textbf{66.13\%} & \textbf{57.83\%} \\
+  \hline
+  TAR & 86.30\% & 84.86\% & 64.27\% \\
+  \hline
+\end{tabular}
+\end{table}
 
 
 \section{Conclusion}
