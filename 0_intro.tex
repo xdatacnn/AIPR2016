@@ -1,0 +1,42 @@
+\section{Introduction}
+% no \IEEEPARstart
+Recent estimates for daily data generation are around 2.5 quintillion ($10^{18}$) bytes. As an example, the instrument upgrades at the Department of Energy (DOE) facilities, including accelerator and detector technology, are yielding an unprecedented increase in the quantity and complexity of raw data, especially in multi-domain experimental facilities, such as synchrotrons or neutron sources. The variety of equipment enables thousands of researchers to pursue investigations across a wide range of areas, from archeology and biology to physics and nano-science. While the science is diverse, the underlying image analyses required to measure fundamental quantities about the experiments, follow a
+relatively smaller set of patterns. These patterns or motifs consist of statistical schemes and data formats, which when incorporated to emerging machine learning (ML) algorithms, can leverage large repositories of curated data, and enable discovery at scientifically relevant solution spaces.
+
+Our paper will describe how space and intensity variations work as computational motifs and how to use ML algorithms to image-centric data, including numerical schemes for automated characterization of materials components. Our preliminary use-cases include records of high-resolution data, coming from scientific experiments, particularly those reliant on advanced instruments and simulations. We will address our three main research and development activities:
+1) Data sources: by coupling Observational, Simulation, and User-interaction data: how to retrieve
+more relevant outcomes, even when using vast amounts of multimodal experimental records;
+2) Software tools: we have deployed ML algorithms using deep learning, e.g., convolutional neural
+networks for conventional and heterogeneous architectures, such as the low-power consumption IBM True
+North neuromorphic chip, as illustrated in Figure 1;
+3) Use-cases: we have analyzed large datasets of x-ray scattering data (HipGISAXS), as in Figure 2,
+running on massively parallel machines, and, more generally, analysis of image-based experiments for
+quantifying material composition and structures (e.g. QuantCT/IDEAL), exploring graph-based methods.
+Finally, we will discuss how these images across domains can be processed using similar tools and/or
+motifs, and how higher levels of concurrency promoted by new computing systems may provide online
+feedback to steer experiments and collect more information from data.
+
+
+%From joao
+The architecture of Convolutional Neural Networks (CNN) depend on a
+large number of parameters, obtained from the data and derived weights,
+found during a through search over the hyperparameter space. The
+memory footprint to compute and store CNN models demand research
+on methods to adapt CNN to energy efficient devices. This work focuses
+on data reduction schemes and net weight representations in order to
+accurately classify scientific data from simulations. Our scheme reduces
+double-format values to one byte,maintaining classification accuracy
+above 98\%.
+
+
+
+\section{Related work}
+Why neuromorphic:
+Problem formulation: the most difficult part of computing, neuromorphic or not, is to figure out what to compute, e.g. scale;
+Increase data volume, complexity (different imaging conditions, noise levels);
+Optimize CNN architecture (number of layer, number of filters, filter size, downsample rate etc.);
+Port to TrueNorth (Dharmendra Modha’s blog);
+Comparing with other algorithms (e.g., SVM, k-means, kNN, bag of features/signatures):
+Complexity and performance;
+Flexibility;
+Robustness in classification and searchable criterias.
