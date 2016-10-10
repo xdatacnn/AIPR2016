@@ -16,6 +16,36 @@ neuron and synapse can be encoded with only one byte to maintain accuracy above 
 \end{figure}
 
 
+64 by 64 projection images of TFIID along 9 viewing angles with random perturbation, noise free);
+
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{|c|c|c|}
+ $\Psi\downarrow_i$    & $\Theta\downarrow_i$       & $\phi\downarrow_i$       \\
+0.00 & 0.0000 & 0.0000 \\
+0.00 & 45.000 & 0.0000 \\
+0.00 & 45.000 & 89.975 \\
+0.00 & 45.000 & 179.95 \\
+0.00 & 45.000 & 269.92 \\
+0.00 & 90.000 & 0.0000 \\
+0.00 & 90.000 & 59.983 \\
+0.00 & 90.000 & 119.97 \\
+0.00 & 90.000 & 178.95
+\end{tabular}
+\end{table}
+
+\textbf{Classifying 9 views:}
+Training images generated from a 3D density map of a transcription factor-II
+
+\textbf{Testing}
+100 projection images generated from Euler angles
+ chosen randomly from 1 to 9
+,  generated randomly (uniform distribution) with
+Result: 100\% success rate
+
+
 \subsection{Neuromorphic computing}
 Corelet Laboratory: Corelet Language + Corelet Library (used to configure the neural network)
 COMPASS simulator

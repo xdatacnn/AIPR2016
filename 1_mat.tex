@@ -1,38 +1,12 @@
 \section{Simulating and recording scientific data}\label{sec:mat}
 History about synthesis, screening, characterization, discovery and re-discovery (retrieval)
 
+\input{table_modalities.tex}
+
 %------------------------------------------------------------------------------
 \subsection{Cryo-EM}\label{subsec:cryo}
 chao/joao
 64 by 64 projection images of TFIID along 9 viewing angles with random perturbation, noise free);
-
-\begin{table}[]
-\centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{|c|c|c|}
- $\Psi\downarrow_i$    & $\Theta\downarrow_i$       & $\phi\downarrow_i$       \\
-0.00 & 0.0000 & 0.0000 \\
-0.00 & 45.000 & 0.0000 \\
-0.00 & 45.000 & 89.975 \\
-0.00 & 45.000 & 179.95 \\
-0.00 & 45.000 & 269.92 \\
-0.00 & 90.000 & 0.0000 \\
-0.00 & 90.000 & 59.983 \\
-0.00 & 90.000 & 119.97 \\
-0.00 & 90.000 & 178.95
-\end{tabular}
-\end{table}
-
-\textbf{Classifying 9 views:}
-Training images generated from a 3D density map of a transcription factor-II
-
-\textbf{Testing}
-100 projection images generated from Euler angles
- chosen randomly from 1 to 9
-,  generated randomly (uniform distribution) with
-Result: 100\% success rate
-
 
 
 
@@ -72,7 +46,9 @@ Projection Euler angles:
 
 
 %------------------------------------------------------------------------------
-\subsection{X-ray diffraction}\label{subsec:diffraction} %LDRD Bragg peaks
+\subsection{X-ray imaging techniques}
+
+\subsubsection{X-ray diffraction}\label{subsec:diffraction} %LDRD Bragg peaks
 92\% success rate for good images
 96\% success rate for bad images
 Sufficiently good to distinguish good images from bad images
@@ -104,7 +80,7 @@ Sufficiently good to distinguish good images from bad images
 
 
 %------------------------------------------------------------------------------
-\subsection{X-ray scattering}\label{subsec:scattering}
+\subsubsection{X-ray scattering}\label{subsec:scattering}
 We propose a supervised classification approach to identify the crystal lattice types from a Grazing
 Incidence Small Angle X-ray Scattering (GISAXS) image. GISAXS is an important reciprocal-space imaging
 modality which provides statistical information about a sample in 3-D. GISAXS is widely used for
@@ -116,7 +92,7 @@ As a first step towards understanding crystal configurations, we use a simulatio
 HiPGISAXS [1], to generate a large collection of sample images from each class of possible crystal
 structures and test the algorithm performance under multiple simulated test images. Inspired by the
 recent success of deep-learning approaches for natural image classification, we use a Convolutional
-Neural Network (CNN) [2] method to carry out the classification.
+Neural Network [2] method to carry out the classification.
 
 We address the problem of classifying GISAXS patterns from 7 different crystal lattices (classes). We
 generated 1,000 images with dimensions of 100X100 pixels for each class by varying the lattice
@@ -140,7 +116,7 @@ HOG    & 92.00    & 79.88    & 79.57        \\
 \end{table}
 
 %------------------------------------------------------------------------------
-\subsection{X-ray attenuation}\label{subsec:microct}
+\subsubsection{X-ray attenuation contrast}\label{subsec:microct}
 
 \cite{IEEEBigData:2014}
 
