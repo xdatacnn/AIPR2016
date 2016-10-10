@@ -1,6 +1,9 @@
 \section{Results}
+Test which sample with which algorithm?
 
 \subsection{Matconvnet}
+\subsubsection{Bragg peaks}
+\subsubsection{Molecule projections}
 A traditional Convolutional Neural Network (CNN) is parameterized by floating point weights and biases
 and takes floating point data as input. In many cases, the floating point representation of these
 parameters and input is more than necessary. The use of a more compact representation of the
@@ -45,6 +48,21 @@ Training images generated from a 3D density map of a transcription factor-II
 ,  generated randomly (uniform distribution) with
 Result: 100\% success rate
 
+\subsubsection{Scattering patterns}
+We address the problem of classifying GISAXS patterns from 7 different crystal lattices (classes). We generated 1,000 images with dimensions of 100X100 pixels for each class by varying the lattice parameters as input to a 4 layer CNN to train a classifier. The architecture of this network is adapted from the MNIST classifier used by MatConvNet. We tested the performance of the classifier on
+multiple data sets, including samples corrupted with realistic noise levels. We obtained an accuracy that ranged from 82.6\% to 92.29\% depending on the parameters of each test case which we believe is an encouraging result for further extending the use of CNNs for GISAXS as well as other synchrotron based scientific experiments.
+
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{llll}
+Method & dataset1 & dataset2 & noisyDataset \\
+CNN    & 92.29    & 82.60    & 91.57        \\
+HOG    & 92.00    & 79.88    & 79.57        \\
+       &          &          &
+\end{tabular}
+\end{table}
 
 \subsection{Neuromorphic computing}
 Corelet Laboratory: Corelet Language + Corelet Library (used to configure the neural network)

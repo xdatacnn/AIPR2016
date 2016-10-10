@@ -51,7 +51,7 @@ Projection Euler angles:
 
 Synchrotron radiation relies on a charge moving at relativistic speeds, and following a curved trajectory~\cite{url:als:booklet}. The x-ray experimental data used in this article was acquired at the Advanced Light Source, which is a Department of Energy-funded synchrotron facility that provides users from around the world access to the brightest beams of soft x-rays, together with hard x-ray and infrared light, for scientific research and technology development in a wide range of disciplines~\cite{url:als}.
 
-\subsubsection{X-ray diffraction}\label{subsec:diffraction} %LDRD Bragg peaks
+\subsubsection{X-ray diffraction}\label{subsec:diffraction} %LDRD Bragg peaks/Chao
 92\% success rate for good images
 96\% success rate for bad images
 Sufficiently good to distinguish good images from bad images
@@ -83,40 +83,16 @@ Sufficiently good to distinguish good images from bad images
 
 
 %------------------------------------------------------------------------------
-\subsubsection{X-ray scattering}\label{subsec:scattering}
-We propose a supervised classification approach to identify the crystal lattice types from a Grazing
-Incidence Small Angle X-ray Scattering (GISAXS) image. GISAXS is an important reciprocal-space imaging
-modality which provides statistical information about a sample in 3-D. GISAXS is widely used for
-studying thin films that play a vital role as building blocks for the next generation of renewable
-energy technology. One challenge in GISAXS imaging is to accurately infer the crystal lattice
-corresponding to the sample from a single 2-D diffraction/scatter pattern.
+\subsubsection{X-ray scattering}\label{subsec:scattering} %Alex
+Scattering techniques are very well established and used to probe micro and nano-structures with a high degree of statistical relevance. The most prominent techniques are small angle X-ray and neutron scattering (SAXS and SANS) for the detection of mesoscale structures as well as wide angle X-ray and neutron scattering (WAXS and WANS) for the investigation of the structure down to the molecular scale. Prominent examples are thin films of conductive polymers, organic electronics, or thin films of nano-particles, which receive high interest for energy relevant materials such as organic photovoltaics. Morphological characterization of thin films is challenging, and substantial advancements have been accomplished through research efforts on new experimental geometry setups for scattering. Unfortunately, these have not been enough to provide the required data reduction and analysis that is fundamental for giving scientist access to use advanced grazing incidence techniques and getting the most relevant information out of their experiments. In particular in-situ analysis is far from possible at the given time.
 
-As a first step towards understanding crystal configurations, we use a simulation package termed
-HiPGISAXS [1], to generate a large collection of sample images from each class of possible crystal
-structures and test the algorithm performance under multiple simulated test images. Inspired by the
-recent success of deep-learning approaches for natural image classification, we use a Convolutional
-Neural Network [2] method to carry out the classification.
+We propose a supervised classification approach to identify the crystal lattice types from a Grazing Incidence Small Angle X-ray Scattering (GISAXS) image. GISAXS is an important reciprocal-space imaging modality which provides statistical information about a sample in 3-D. GISAXS is widely used for
+studying thin films that play a vital role as building blocks for the next generation of renewable energy technology. One challenge in GISAXS imaging is to accurately infer the crystal lattice corresponding to the sample from a single 2-D diffraction/scatter pattern.
 
-We address the problem of classifying GISAXS patterns from 7 different crystal lattices (classes). We
-generated 1,000 images with dimensions of 100X100 pixels for each class by varying the lattice
-parameters as input to a 4 layer CNN to train a classifier. The architecture of this network is
-adapted from the MNIST classifier used by MatConvNet. We tested the performance of the classifier on
-multiple data sets, including samples corrupted with realistic noise levels. We obtained an accuracy
-that ranged from 82.6\% to 92.29\% depending on the parameters of each test case which we believe is
-an encouraging result for further extending the use of CNNs for GISAXS as well as other synchrotron
-based scientific experiments.
+As a first step towards understanding crystal configurations, we use a simulation package termed HiPGISAXS [1], to generate a large collection of sample images from each class of possible crystal structures and test the algorithm performance under multiple simulated test images. Inspired by the
+recent successes of deep-learning approaches for natural image classification, we tested CNN as the method to carry out the classification.
 
-\begin{table}[]
-\centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{llll}
-Method & dataset1 & dataset2 & noisyDataset \\
-CNN    & 92.29    & 82.60    & 91.57        \\
-HOG    & 92.00    & 79.88    & 79.57        \\
-       &          &          &
-\end{tabular}
-\end{table}
+We have been exploring detection of peak-positions from image datasets, so that information about the lattice and orientation of the material is recovered. A typical image from the ALS beamline 7.3.3 will present shapes used as input to derive the underlying structure of the sample. The location, shapes and position of these structures, while yielding useful information, can also be used as an input to simulation tools. Shapes vary among rings, arcs, peaks and lines. In case of time resolved or multi-energy data, the features become three or more dimensional, e.g., peaks become rods and lines become planes. We will develop software tools for the pattern recognition of the scattering data collected in grazing incidence geometry. The task of extracting morphological structures and representing them through features maps will have similarities to pattern recognition in 3D tomography data. Advanced recognition will significantly accelerate the model development for forward solvers.  
 
 %------------------------------------------------------------------------------
 \subsubsection{X-ray attenuation contrast}\label{subsec:microct}
