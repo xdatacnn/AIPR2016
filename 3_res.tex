@@ -26,7 +26,10 @@ neuron and synapse can be encoded with only one byte to maintain accuracy above 
 \caption{My caption}
 \label{my-label}
 \begin{tabular}{|c|c|c|}
- $\Psi\downarrow_i$    & $\Theta\downarrow_i$       & $\phi\downarrow_i$       \\
+\hline
+ $\Psi\downarrow_i$    & $\Theta\downarrow_i$       & $\phi\downarrow_i$
+ \\
+ \hline
 0.00 & 0.0000 & 0.0000 \\
 0.00 & 45.000 & 0.0000 \\
 0.00 & 45.000 & 89.975 \\
@@ -35,7 +38,8 @@ neuron and synapse can be encoded with only one byte to maintain accuracy above 
 0.00 & 90.000 & 0.0000 \\
 0.00 & 90.000 & 59.983 \\
 0.00 & 90.000 & 119.97 \\
-0.00 & 90.000 & 178.95
+0.00 & 90.000 & 178.95 \\
+\hline
 \end{tabular}
 \end{table}
 
@@ -56,11 +60,13 @@ multiple data sets, including samples corrupted with realistic noise levels. We 
 \centering
 \caption{My caption}
 \label{my-label}
-\begin{tabular}{llll}
+\begin{tabular}{|c||c|c|c|}
+\hline
 Method & dataset1 & dataset2 & noisyDataset \\
+\hline
 CNN    & 92.29    & 82.60    & 91.57        \\
 HOG    & 92.00    & 79.88    & 79.57        \\
-       &          &          &
+\hline
 \end{tabular}
 \end{table}
 
@@ -144,24 +150,24 @@ respectively.}
 
 
 
-\begin{table}[!h]
-\caption{This is only a place holder for table.}\label{tab:accTari} \centering
-\begin{tabular}{|c||c|c|c|}
-  \hline
-  \multirow{2}{*}{\textbf{Method}} & \textbf{Tari 56} & \textbf{Tari 180} & \textbf{Tari 1000} \\
-   & \textbf{Database} & \textbf{Database} & \textbf{Database} \\
-  \hline
-  Proposed & \textbf{99.84\%} & \textbf{96.66\%} & \textbf{81.60\%} \\
-  \hline
-  ProposedNoConc & 93.82\% & 90.84\% & 73.96\% \\
-  \hline
-  PedrosaA \cite{Pedrosa:2011a} & 43.25\% & 26.40\% & 15.49\% \\
-  \hline
-  PedrosaB \cite{Pedrosa:2011b} & 75.06\% & 61.46\% & 53.35\% \\
-  \hline
-  PedrosaBConc & \textbf{76.48\%} & \textbf{66.13\%} & \textbf{57.83\%} \\
-  \hline
-  TAR & 86.30\% & 84.86\% & 64.27\% \\
-  \hline
-\end{tabular}
-\end{table}
+% \begin{table}[!h]
+% \caption{This is only a place holder for table.}\label{tab:accTari} \centering
+% \begin{tabular}{|c||c|c|c|}
+%   \hline
+%   \multirow{2}{*}{\textbf{Method}} & \textbf{Tari 56} & \textbf{Tari 180} & \textbf{Tari 1000} \\
+%    & \textbf{Database} & \textbf{Database} & \textbf{Database} \\
+%   \hline
+%   Proposed & \textbf{99.84\%} & \textbf{96.66\%} & \textbf{81.60\%} \\
+%   \hline
+%   ProposedNoConc & 93.82\% & 90.84\% & 73.96\% \\
+%   \hline
+%   PedrosaA \cite{Pedrosa:2011a} & 43.25\% & 26.40\% & 15.49\% \\
+%   \hline
+%   PedrosaB \cite{Pedrosa:2011b} & 75.06\% & 61.46\% & 53.35\% \\
+%   \hline
+%   PedrosaBConc & \textbf{76.48\%} & \textbf{66.13\%} & \textbf{57.83\%} \\
+%   \hline
+%   TAR & 86.30\% & 84.86\% & 64.27\% \\
+%   \hline
+% \end{tabular}
+% \end{table}
