@@ -1,16 +1,10 @@
 \section{Results}
-Test which sample with which algorithm?
+In order to improve understanding of our experimental results, we keep the subsections organized per use-cases, as described in Sec.~\ref{sec:mat}.
 
-\subsection{Matconvnet}
-\subsubsection{Bragg peaks}
-\subsubsection{Molecule projections}
-A traditional Convolutional Neural Network (CNN) is parameterized by floating point weights and biases
-and takes floating point data as input. In many cases, the floating point representation of these
-parameters and input is more than necessary. The use of a more compact representation of the
-parameters and input allows CNNs to be deployed on energy efficient architectures that operate with a
-few bits and much lower memory footprint. This work focuses on data reduction and quantization schemes
-that can be applied to a trained CNN for classifying scienti c simulation data. We show that each
+\subsection{Cryo-EM and molecule projections}
+A traditional Convolutional Neural Network (CNN) is parameterized by floating point weights and biases and takes floating point data as input. In many cases, the floating point representation of these parameters and input is more than necessary. The use of a more compact representation of the parameters and input allows CNNs to be deployed on energy efficient architectures that operate with a few bits and much lower memory footprint. This work focuses on data reduction and quantization schemes that can be applied to a trained CNN for classifying scienti c simulation data. We show that each
 neuron and synapse can be encoded with only one byte to maintain accuracy above 98\%.
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=\linewidth]{img/joao3.png}
@@ -19,11 +13,11 @@ neuron and synapse can be encoded with only one byte to maintain accuracy above 
 \end{figure}
 
 
-64 by 64 projection images of TFIID along 9 viewing angles with random perturbation, noise free);
+64 by 64 projection images of TFIID along 9 viewing angles with random perturbation, noise free;
 
 \begin{table}[]
 \centering
-\caption{My caption}
+\caption{Parameters for the simulation models of TFIID projects.}
 \label{my-label}
 \begin{tabular}{|c|c|c|}
 \hline
@@ -52,7 +46,10 @@ Training images generated from a 3D density map of a transcription factor-II
 ,  generated randomly (uniform distribution) with
 Result: 100\% success rate
 
-\subsubsection{Scattering patterns}
+\subsection{Imaging Techniques based on X-ray}
+\subsubsection{X-ray diffraction}
+
+\subsubsection{X-ray scattering}
 We address the problem of classifying GISAXS patterns from 7 different crystal lattices (classes). We generated 1,000 images with dimensions of 100X100 pixels for each class by varying the lattice parameters as input to a 4 layer CNN to train a classifier. The architecture of this network is adapted from the MNIST classifier used by MatConvNet. We tested the performance of the classifier on
 multiple data sets, including samples corrupted with realistic noise levels. We obtained an accuracy that ranged from 82.6\% to 92.29\% depending on the parameters of each test case which we believe is an encouraging result for further extending the use of CNNs for GISAXS as well as other synchrotron based scientific experiments.
 
@@ -70,8 +67,25 @@ HOG    & 92.00    & 79.88    & 79.57        \\
 \end{tabular}
 \end{table}
 
-\subsection{Neuromorphic computing}
-Corelet Laboratory: Corelet Language + Corelet Library (used to configure the neural network)
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{|c||c|c|c|}
+\hline
+Method & dataset1 & dataset2 & noisyDataset \\
+\hline
+CNN    & 92.29    & 82.60    & 91.57        \\
+HOG    & 92.00    & 79.88    & 79.57        \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{X-ray attenuation contrast}
+
+\textbf{Neuromorphic computing}
+- Eedn
+- Corelet Laboratory: Corelet Language + Corelet Library (used to configure the neural network)
 COMPASS simulator
 Available for IBM Blue Gene Q;
 Average neuron spiking rate 8.1 Hz (388 times slower than real time);
