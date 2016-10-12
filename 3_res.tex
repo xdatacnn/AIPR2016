@@ -149,21 +149,18 @@ layers, with size 2x2 and no stride. The last layer is fully-connected and outpu
 
 %Our search engine builds upon computer vision advances made over the past decade in low-level feature matching, large data handling and object recognition. We demonstrate hierarchical clustering among images semi-cooperatively shot around MIT, automatic linking of flickr photos and aerial frames from the Grand Canyon, and video segment identification for a TV broadcast. Moreover, our software tools incorporate visible vs infrared band selection, color content quantization and human face detection. Ongoing and future extensions of this image search system are discussed.
 
-
-\begin{figure}[!t]
+\begin{figure*}[h]
 \centering
-\subfloat[Case I]{\includegraphics[width=.439\linewidth]{img/fiberMontage.png}
-\label{fig_first_case}}
-%\hfil
-\subfloat[Case II]{\includegraphics[width=.475\linewidth]{img/yes_fibers.png}
-\label{fig_second_case}}
+\includegraphics[width=\linewidth]{img/fiberResult.png}
 \caption{Using TensorFlow: Dataset with more than three hundred thousand samples, used to train a deep
 learning algorithm in order to separate fiber profiles (left) from other regions (right) as they
 appear in micro tomography image from ceramic matrix composites. Accuracy results for this CNN are
 99.788623\%, considering stratified training and tests sets, with 70\% and 30\% of the samples
 respectively.}
-\label{fig:pycbir}
-\end{figure}
+\label{fig:fiberResult}
+\end{figure*}
+
+
 
 
 

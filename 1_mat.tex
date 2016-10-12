@@ -5,18 +5,19 @@ History about synthesis, screening, characterization, discovery and re-discovery
 
 %------------------------------------------------------------------------------
 \subsection{Cryo-EM}\label{subsec:cryo}
-chao/joao
-64 by 64 projection images of TFIID along 9 viewing angles with random perturbation, noise free);
+Why Cryo-EM?
 
+An important protein is the Transcription initiation factor II because it makes up everything... It has been studied using .... Cryo-EM is a good deal because...
 
+It's hard to get labelled cryo-EM because..., therefore we resort to simulation code to investigate polypeptides. The name of the code and the reference
 
+The data consists of 64 by 64 projection images of TFIID along 9 viewing angles with random perturbation, noise free...
 
 9 views (evenly spaced on a sphere)
 1000 simulated projection images
 Projection Euler angles:
 
- chosen randomly from 1 to 9
-,  generated randomly (uniform distribution) with
+chosen randomly from 1 to 9,  generated randomly (uniform distribution) with
 
 \begin{figure*}[!t]
 \centering
@@ -27,7 +28,7 @@ Projection Euler angles:
 \label{fig_second_case}}
 \subfloat[Simulated molecule projections]{\includegraphics[width=.33\linewidth]{img/cryoem3c.png}
 \label{fig_second_case}}
-\caption{LDRD case.}
+\caption{Cryo-EM images of TFIIDM at different project angles.}
 \label{fig:ldrd}
 \end{figure*}
 
@@ -40,7 +41,7 @@ Projection Euler angles:
 \label{fig_second_case}}
 \subfloat[Compact model]{\includegraphics[width=.32\linewidth]{img/cryoem1c.png}
 \label{fig_second_case}}
-\caption{LDRD case.}
+\caption{TFIIDM structure, cryo-EM simulation outcomes and reduced data representation.}
 \label{fig:ldrd}
 \end{figure*}
 
@@ -83,7 +84,7 @@ Sufficiently good to distinguish good images from bad images
 
 
 %------------------------------------------------------------------------------
-\subsubsection{X-ray scattering}\label{subsec:scattering} %Alex
+\subsubsection{X-ray scattering}\label{subsec:gisaxs} %Alex
 Scattering techniques are very well established and used to probe micro and nano-structures with a high degree of statistical relevance. The most prominent techniques are small angle X-ray and neutron scattering (SAXS and SANS) for the detection of mesoscale structures as well as wide angle X-ray and neutron scattering (WAXS and WANS) for the investigation of the structure down to the molecular scale. Prominent examples are thin films of conductive polymers, organic electronics, or thin films of nano-particles, which receive high interest for energy relevant materials such as organic photovoltaics. Morphological characterization of thin films is challenging, and substantial advancements have been accomplished through research efforts on new experimental geometry setups for scattering. Unfortunately, these have not been enough to provide the required data reduction and analysis that is fundamental for giving scientist access to use advanced grazing incidence techniques and getting the most relevant information out of their experiments. In particular in-situ analysis is far from possible at the given time.
 
 We propose a supervised classification approach to identify the crystal lattice types from a Grazing Incidence Small Angle X-ray Scattering (GISAXS) image. GISAXS is an important reciprocal-space imaging modality which provides statistical information about a sample in 3-D. GISAXS is widely used for
@@ -107,9 +108,13 @@ Proposed work and expected solutions: Develop and deploy algorithms that find th
 \cite{IEEEBigData:2014}
 
 
-\begin{figure*}[h]
+\begin{figure}[!t]
 \centering
-\includegraphics[width=\linewidth]{img/fiberResult.png}
-\caption{Fiber result.}
-\label{fig:fiberResult}
-\end{figure*}
+\subfloat[Case I]{\includegraphics[width=.439\linewidth]{img/fiberMontage.png}
+\label{fig_first_case}}
+%\hfil
+\subfloat[Case II]{\includegraphics[width=.475\linewidth]{img/yes_fibers.png}
+\label{fig_second_case}}
+\caption{Some description of CMC and fibers.}
+\label{fig:pycbir}
+\end{figure}
