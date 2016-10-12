@@ -4,6 +4,8 @@ History about synthesis, screening, characterization, discovery and re-discovery
 \input{table_modalities.tex}
 
 %------------------------------------------------------------------------------
+%no worries, these marks will be eliminated
+-------------------------------------------------------
 \subsection{Cryo-EM}\label{subsec:cryo}
 Why Cryo-EM?
 
@@ -11,13 +13,14 @@ An important protein is the Transcription initiation factor II because it makes 
 
 It's hard to get labelled cryo-EM because..., therefore we resort to simulation code to investigate polypeptides. The name of the code and the reference
 
-The data consists of 64 by 64 projection images of TFIID along 9 viewing angles with random perturbation, noise free...
+The data consists of 64 by 64 projection images of TFIID along 9 viewing angles with random perturbation, noise free... What does it have to do with Figure~\ref{fig:cryo1}? What about Figure~\ref{fig:cryo2}?
 
 9 views (evenly spaced on a sphere)
 1000 simulated projection images
 Projection Euler angles:
 
 chosen randomly from 1 to 9,  generated randomly (uniform distribution) with
+
 
 \begin{figure*}[!t]
 \centering
@@ -29,7 +32,7 @@ chosen randomly from 1 to 9,  generated randomly (uniform distribution) with
 \subfloat[Simulated molecule projections]{\includegraphics[width=.33\linewidth]{img/cryoem3c.png}
 \label{fig_second_case}}
 \caption{Cryo-EM images of TFIIDM at different project angles.}
-\label{fig:ldrd}
+\label{fig:cryo1}
 \end{figure*}
 
 \begin{figure*}[!t]
@@ -42,11 +45,12 @@ chosen randomly from 1 to 9,  generated randomly (uniform distribution) with
 \subfloat[Compact model]{\includegraphics[width=.32\linewidth]{img/cryoem1c.png}
 \label{fig_second_case}}
 \caption{TFIIDM structure, cryo-EM simulation outcomes and reduced data representation.}
-\label{fig:ldrd}
+\label{fig:cryo2}
 \end{figure*}
 
 %------------------------------------------------------------------------------
 %------------------------------------------------------------------------------
+-------------------------------------------------------
 \subsection{Imaging Techniques based on X-ray}
 
 
@@ -81,9 +85,8 @@ Sufficiently good to distinguish good images from bad images
 \label{fig:ldrd}
 \end{figure}
 
-
-
 %------------------------------------------------------------------------------
+-------------------------------------------------------
 \subsubsection{X-ray scattering}\label{subsec:gisaxs} %Alex
 Scattering techniques are very well established and used to probe micro and nano-structures with a high degree of statistical relevance. The most prominent techniques are small angle X-ray and neutron scattering (SAXS and SANS) for the detection of mesoscale structures as well as wide angle X-ray and neutron scattering (WAXS and WANS) for the investigation of the structure down to the molecular scale. Prominent examples are thin films of conductive polymers, organic electronics, or thin films of nano-particles, which receive high interest for energy relevant materials such as organic photovoltaics. Morphological characterization of thin films is challenging, and substantial advancements have been accomplished through research efforts on new experimental geometry setups for scattering. Unfortunately, these have not been enough to provide the required data reduction and analysis that is fundamental for giving scientist access to use advanced grazing incidence techniques and getting the most relevant information out of their experiments. In particular in-situ analysis is far from possible at the given time.
 
@@ -103,6 +106,7 @@ recent successes of deep-learning approaches for natural image classification, w
 We have been exploring detection of peak-positions from image datasets, so that information about the lattice and orientation of the material is recovered. A typical image from the ALS beamline 7.3.3 will present shapes used as input to derive the underlying structure of the sample. The location, shapes and position of these structures, while yielding useful information, can also be used as an input to simulation tools. Shapes vary among rings, arcs, peaks and lines. In case of time resolved or multi-energy data, the features become three or more dimensional, e.g., peaks become rods and lines become planes. We will develop software tools for the pattern recognition of the scattering data collected in grazing incidence geometry. The task of extracting morphological structures and representing them through features maps will have similarities to pattern recognition in 3D tomography data. Advanced recognition will significantly accelerate the model development for forward solvers.
 
 %------------------------------------------------------------------------------
+-------------------------------------------------------
 \subsubsection{X-ray attenuation contrast}\label{subsec:microct}
 Another example of high-throughput data collection is microct....
 
