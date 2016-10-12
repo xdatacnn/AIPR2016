@@ -4,7 +4,7 @@ Recent estimates for daily data generation are around 2.5 quintillion ($10^{18}$
 
 Beyond conventional computer vision approaches~\cite{Ballard, Gonzalez, AFM:2015}, new schemes have emerged to address the semantic gap between signal acquisition and image interpretation~\cite{Zhang:2016:a}. In fact, convolutional neural networks turned into a mainstream ML algorithm that bridges massive image datasets to high-level visual description~\cite{Fei:2009, Fei:2015}. Nonetheless, major challenges still remain unsolved in image understanding, such as those involving quantitative microscopy~\cite{Ushizima2016} of high-resolution data.
 
-\fixd{A word about kinds of CNN here and the role of these techniques as a data reduction mechanism; image signatures; much fewer bytes than the original image representation}.
+\fixd{A paragraph about kinds of CNN here and the role of these techniques as a data reduction mechanism; image signatures; much fewer bytes than the original image representation}.
 
 This paper will describe how to turn visual primitives, constrained to space and intensity variations, into higher-level semantics that can be used as computational motifs to understand image-centric data. We include the description and ..... \fixd{review here}
 numerical schemes for automated characterization of materials components.
@@ -12,15 +12,16 @@ numerical schemes for automated characterization of materials components.
 Our use-cases include records of high-resolution data, coming from scientific experiments, particularly those reliant on advanced instruments and simulations. We will report our preliminary results emphasizing three main tasks during the data analysis:
 (i) Data sources: by coupling Observational, Simulation, and User-interaction data, how we can retrieve more relevant outcomes, particularly when using vast amounts of experimental records; (ii) Software tools: how we deploy ML algorithms using convolutional neural networks for conventional (Von Neumann) and new architectures, such as the low-power consumption IBM True
 North neuromorphic chip;
-(iii) Use-cases: how the peculiarities of a science domain play a role in the algorithm development, how to extend algorithms learned in one science domain to other problems, which limitations to expect, and how we overcame some of the barriers imposed by the lack of curated data. Table~\ref{table1} summarizes the use-cases reported in this paper, which are cryo-electron microscopy, X-ray diffraction, X-ray scattering and X-ray microtomography.
+(iii) Use-cases: how the peculiarities of a science domain play a role in the algorithm development, how to extend algorithms learned in one science domain to other problems, which limitations to expect, and how we overcame some of the barriers imposed by the lack of curated data.
 
+Table~\ref{table1} summarizes the use-cases reported in this paper, which are cryo-electron microscopy, X-ray diffraction, X-ray scattering and X-ray microtomography, described in detail in Section~\ref{sec:mat}. Section~\ref{sec:met} describes the algorithm and software packages that support the convolutional neural networks implementation, and Section~\ref{sec:res} presents details about parameters and accuracy results associated to each use-case. Finally, Section~\ref{sec:conc} explains the main contributions of our investigation and Section~\ref{sec:fut} elucidates future directions.
 
-
--> aggregate
-
-%This work incorporates data gathering, analytical schemes using CNN and exploratory visualization.
 \input{table_modalities.tex}
 
+%-> aggregate
+%This work incorporates data gathering, analytical schemes using CNN and exploratory visualization.
+
+%------------------------------------------------------------------------------------
 \section{Related work}
 Why neuromorphic:
 Problem formulation: the most difficult part of computing, neuromorphic or not, is to figure out what to compute, e.g. scale;
