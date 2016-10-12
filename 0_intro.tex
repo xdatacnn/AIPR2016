@@ -1,8 +1,17 @@
 \section{Introduction}
 % no \IEEEPARstart
-Recent estimates for daily data generation are around 2.5 quintillion ($10^{18}$) bytes. As an example, the instrument upgrades at the Department of Energy (DOE) facilities, including accelerator and signal detector technology, are yielding an unprecedented increase in the quantity and complexity of raw data, especially in multi-domain experimental facilities, such as synchrotrons and neutron sources. The variety of equipment enables thousands of researchers to pursue investigations across a wide range of areas, from archeology and biology to physics and nano-science. While the science is diverse, the underlying image analyses required to measure fundamental quantities about the experiments follow a relatively smaller set of patterns. These patterns or motifs, when incorporated to emerging machine learning (ML) algorithms, will ease scientists of the burden to leverage large repositories of curated data, and even enhance repositories by data augmentation for the discovery at scientifically relevant solution spaces.
+Recent estimates for daily data generation are around 2.5 quintillion ($10^{18}$) bytes. As an example, the instrument upgrades at the national laboratories, including accelerator and signal detector technology, are yielding an unprecedented increase in the quantity and complexity of output data from experimental facilities, such as synchrotrons and neutron sources~\cite{EOD:2015}. These instruments enable thousands of researchers to pursue investigations across a wide range of domains, from archeology and biology to physics and nano-science. While the science is diverse, the underlying image analyses required to measure fundamental quantities about the experiments follow a relatively smaller set of patterns. These patterns or motifs, when incorporated to emerging computer vision and machine learning (ML) algorithms, will ease scientists of the burden to leverage large repositories of curated data, and even enhance repositories by data augmentation for the discovery at scientifically relevant solution spaces.
 
-Our paper will describe how to turn visual primitives, constrained to space and intensity variations, into higher-level semantics that can be used as computational motifs to understand image-centric data. We include the description and .....
+
+Beyond conventional computer vision approaches~\cite{Ballard, Gonzalez}, several new schemes
+have emerged to attack this semantic gap in CBIR [11]–[16].
+For instance, image annotation techniques intend to directly
+acquire the semantic concepts from the low-level visual
+features of an image [11]. However, major challenges still
+remain in image annotation. Recently,
+
+
+This paper will describe how to turn visual primitives, constrained to space and intensity variations, into higher-level semantics that can be used as computational motifs to understand image-centric data. We include the description and .....
 \fixd{here}
  numerical schemes for automated characterization of materials components. Our preliminary use-cases include records of high-resolution data, coming from scientific experiments, particularly those reliant on advanced instruments and simulations. We will address our three main research and development activities:
 1) Data sources: by coupling Observational, Simulation, and User-interaction data: how to retrieve
@@ -24,6 +33,8 @@ on data reduction schemes and net weight representations in order to
 accurately classify scientific data from simulations. Our scheme reduces
 double-format values to one byte,maintaining classification accuracy
 above 98\%.
+
+-> aggregate
 
 %This work incorporates data gathering, analytical schemes using CNN and exploratory visualization.
 \input{table_modalities.tex}
