@@ -11,10 +11,9 @@ In this section, we describe the Convolutional Neural Networks algorithms used f
 
 \subsubsection{Neuromophic computation}
 
-
 \subsection{TensorFlow}
 
-The TensorFlow arquiteture to create the CNN in this work is based in the AlexNet\ref{alexnet} CNN.  Two convLayers (CL), two poolLayers (PL), two fully connected layers (FC). The features of the last FC are used for image retrieval. Number of parameters of all layers: 571,648. Number of pameters of the FC: 467,520. Table~\ref{tab:layers} show how the TensorFlow CNN is composed.
+The TensorFlow arquiteture to create the CNN in this work is based in the AlexNet\ref{alexnet}.  We used a CNN with two convLayers (CL), two poolLayers (PL) and two fully connected layers (FC). The features of the last FC are use for image retrieval. The number of parameters of all layers is 571,648 and the number of pameters of the FC is 467,520. Table~\ref{tab:layers} shows the TensorFlow arquiteture including the output and filter size of each layer.
 
 \begin{table}
 \centering \caption{TensorFlow CNN structure used.} \label{tab:layers}
@@ -22,11 +21,11 @@ The TensorFlow arquiteture to create the CNN in this work is based in the AlexNe
      \begin{tabular}{c c c c}
          \hline
          Layer No. & Layer Type      & Output Size & Filter Size \\ \hline
-         1         & Input           & 52 x 52 x 3 &  ---\\
-         2         & Convolutional   & 52 x 52 x 64 & 5 x 5 \\
-         3         & Max-pooling     & 26 x 26 x 64 & 2 x 2 \\
-         4         & Convolutional   & 26 x 26 x 64 &  5 x 5 \\
-         5         & Max-pooling     & 13 x 13 x 64 &  2 x 2 \\
+         1         & Input           & 16 x 16 x 1 &  ---\\
+         2         & Convolutional   & 16 x 16 x 64 & 5 x 5 \\
+         3         & Max-pooling     & 8 x 8 x 64 & 2 x 2 \\
+         4         & Convolutional   & 8 x 8 x 64 &  5 x 5 \\
+         5         & Max-pooling     & 4 x 4 x 64 &  2 x 2 \\
          6         & Fully connected & 382 x 1 & --- \\
          7         & Fully connected & 192 x 1 & --- \\
          \hline
