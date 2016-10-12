@@ -2,21 +2,20 @@
 % no \IEEEPARstart
 Recent estimates for daily data generation are around 2.5 quintillion ($10^{18}$) bytes. As an example, the instrument upgrades at the national laboratories, including accelerator and signal detector technology, are yielding an unprecedented increase in the quantity and complexity of output data from experimental facilities, such as synchrotrons and neutron sources~\cite{EOD:2015}. These instruments enable thousands of researchers to pursue investigations across a wide range of domains, from archeology and biology to physics and nano-science. While the science is diverse, the underlying image analyses required to measure fundamental quantities about the experiments follow a relatively smaller set of patterns. These patterns or motifs, when incorporated to emerging computer vision and machine learning (ML) algorithms, will ease scientists of the burden to leverage large repositories of curated data, and even enhance repositories by data augmentation for the discovery at scientifically relevant solution spaces.
 
-
 Beyond conventional computer vision approaches~\cite{Ballard, Gonzalez, AFM:2015}, new schemes have emerged to address the semantic gap between signal acquisition and image interpretation~\cite{Zhang:2016:a}. In fact, convolutional neural networks turned into a mainstream ML algorithm that bridges massive image datasets to high-level visual description~\cite{Fei:2015}. Nonetheless, major challenges still remain unsolved in image understanding, such as those involving quantitative microscopy~\cite{Ushizima2016} of high-resolution data.
 
+A word about kinds of CNN here and the role of these techniques as a data reduction mechanism; image signatures; much fewer bytes than the original image representation.
 
-This paper will describe how to turn visual primitives, constrained to space and intensity variations, into higher-level semantics that can be used as computational motifs to understand image-centric data. We include the description and .....
-\fixd{here}
- numerical schemes for automated characterization of materials components. Our preliminary use-cases include records of high-resolution data, coming from scientific experiments, particularly those reliant on advanced instruments and simulations. We will address our three main research and development activities:
-1) Data sources: by coupling Observational, Simulation, and User-interaction data: how to retrieve
-more relevant outcomes, even when using vast amounts of multimodal experimental records;
-2) Software tools: we have deployed ML algorithms using deep learning, e.g., convolutional neural
-networks for conventional and heterogeneous architectures, such as the low-power consumption IBM True
-North neuromorphic chip, as illustrated in Figure 1;
-3) Use-cases: we have analyzed large datasets of x-ray scattering data (HipGISAXS), as in Figure 2, running on massively parallel machines, and, more generally, analysis of image-based experiments for quantifying material composition and structures (e.g. QuantCT/IDEAL), exploring graph-based methods. Finally, we will discuss how these images across domains can be processed using similar tools and/or motifs, and how higher levels of concurrency promoted by new computing systems may provide online feedback to steer experiments and collect more information from data.
+This paper will describe how to turn visual primitives, constrained to space and intensity variations, into higher-level semantics that can be used as computational motifs to understand image-centric data. We include the description and ..... \fixd{review here}
+numerical schemes for automated characterization of materials components.
 
-Use cases in Table~\ref{table1}.
+Our use-cases include records of high-resolution data, coming from scientific experiments, particularly those reliant on advanced instruments and simulations. We will report our preliminary results emphasizing three main tasks during the data analysis:
+(i) Data sources: by coupling Observational, Simulation, and User-interaction data, how we can retrieve more relevant outcomes, particularly when using vast amounts of experimental records; (ii) Software tools: how we deploy ML algorithms using convolutional neural networks for conventional (Von Neumann) and new architectures, such as the low-power consumption IBM True
+North neuromorphic chip; (iii) Use-cases: how the peculiarities of a science domain play a role in the algorithm development, how to extend algorithms learned in one science domain to other problems, which limitations to expect, and how we overcame some of the barriers imposed by the lack of curated data.
+
+
+
+Use cases in Table~\ref{table1}: cryo-electron microscopy, X-ray diffraction, X-ray scattering and X-ray microtomography.
 
 %From joao
 The architecture of Convolutional Neural Networks (CNN) depend on a
