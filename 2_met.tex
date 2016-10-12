@@ -7,11 +7,21 @@ In this section, we describe the Convolutional Neural Networks algorithms used f
 
 %On the convergence of classification algorithms for
 
-\subsection{Matconvnet}
+\subsection{Matconvnet}%venkat/chao/dani
+%From joao
+The architecture of Convolutional Neural Networks (CNN) depend on a
+large number of parameters, obtained from the data and derived weights,
+found during a through search over the hyperparameter space. The
+memory footprint to compute and store CNN models demand research
+on methods to adapt CNN to energy efficient devices. This work focuses
+on data reduction schemes and net weight representations in order to
+accurately classify scientific data from simulations. Our scheme reduces
+double-format values to one byte,maintaining classification accuracy
+above 98\%.
 
-\subsubsection{Neuromophic computation}
+\subsubsection{Neuromophic computation}%dani
 
-\subsection{TensorFlow}
+\subsection{TensorFlow} %flaromdan
 
 The TensorFlow arquiteture to create the CNN in this work is based in the AlexNet\ref{alexnet}.  We used a CNN with two convLayers (CL), two poolLayers (PL) and two fully connected layers (FC). The features of the last FC are use for image retrieval. The number of parameters of all layers is 571,648 and the number of pameters of the FC is 467,520. Table~\ref{tab:layers} shows the TensorFlow arquiteture including the output and filter size of each layer.
 
