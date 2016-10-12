@@ -139,10 +139,13 @@ Deploy TN on a testbed at NERSC
 Port models to the chip at LBL
 Evaluate on new samples coming from ALS
 
-\subsection{NVIDIA DevBox}
+\subsection{Tensor and NVIDIA DevBox}
 
 pyCBIR is python package that offers a prototype system for user exploration of general image composition. The system enables image-based query to digital imagery archives, returning the top-n pictures that most resembles the query.
 
+The CNN we use is adapted from the AlexNet provided in TensorFlow []. It consists of two convolutional layers, with 64 filter with size 5x5, with no strides and no zero
+padding. Two layers of max pooling immediately follow the first two convolutional
+layers, with size 2x2 and no stride. The last layer is fully-connected and outputs a feature vector, which is ultimately used as signature to retrieve images by similarity.
 
 %Our search engine builds upon computer vision advances made over the past decade in low-level feature matching, large data handling and object recognition. We demonstrate hierarchical clustering among images semi-cooperatively shot around MIT, automatic linking of flickr photos and aerial frames from the Grand Canyon, and video segment identification for a TV broadcast. Moreover, our software tools incorporate visible vs infrared band selection, color content quantization and human face detection. Ongoing and future extensions of this image search system are discussed.
 
